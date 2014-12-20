@@ -10,8 +10,8 @@ gcc $CFLAGS -c boot.S
 gcc $LDFLAGS -o kernel.exec boot.o kernel.o
 objcopy -O binary kernel.exec kernel
 
-cp kernel ../os/boot/kernel
+cp kernel os/boot/kernel
 
-grub-mkrescue -o ../os.img ../os
+grub-mkrescue -o os.img os
 
-qemu-system-i386 ../os.img
+qemu-system-i386 os.img
